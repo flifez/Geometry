@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
+import Observation
 
 struct ContentView: View {
+    @Bindable private var viewModel = SketchpadViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            SketchpadView(viewModel: viewModel)
+                .navigationTitle("Geometry Sketchpad")
+                .toolbar {
+                    // TODO:
+                }
         }
-        .padding()
     }
 }
 
